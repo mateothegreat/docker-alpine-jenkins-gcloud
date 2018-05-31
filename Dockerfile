@@ -7,6 +7,8 @@ USER root
 
 COPY entrypoint.sh /entrypoint.sh
 
+RUN chmod +x /entrypoint.sh
+
 ENV GCLOUD_COMPONENTS="kubectl beta docker-credential-gcr"
 
 # For kubernetes permission errors
@@ -15,8 +17,6 @@ VOLUME [ "/var/jenkins_home" ]
 # VOLUME [ "/mnt/gcp_service_account" ]
 
 RUN apk add --update python
-
-USER root
 
 # WORKDIR /var/jenkins_home
 
