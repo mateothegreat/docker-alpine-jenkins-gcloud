@@ -13,7 +13,7 @@ ENV GCLOUD_COMPONENTS="kubectl beta docker-credential-gcr"
 
 VOLUME [ "/var/jenkins_home" ]
 
-RUN apk add --update python
+RUN apk add --update python docker
 
 RUN wget https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz && \
     tar zxvf google-cloud-sdk.tar.gz && \
