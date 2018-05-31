@@ -29,11 +29,11 @@ RUN wget https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz && \
 ENV PATH /google-cloud-sdk/bin:$PATH
 
 # Configure gcloud for your project
-RUN echo Yes | gcloud components install ${GCLOUD_COMPONENTS}
+# RUN echo Yes | gcloud components install ${GCLOUD_COMPONENTS} 
 
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+# RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 EXPOSE 8080 
 EXPOSE 50001

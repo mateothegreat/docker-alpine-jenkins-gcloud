@@ -8,4 +8,9 @@ services:
             - '50001:50001'
         volumes:
             - '$PWD/jenkins_home:/var/jenkins_home'
+            - '$PWD/service_account.json:/service_account.json'
         restart: always
+        environment: 
+            - GCLOUD_KEY_FILE=/service_account.json
+            - GCLOUD_PROJECT=nodetech-devops-01
+            - GCLOUD_ZONE=us-central1-a
