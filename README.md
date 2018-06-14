@@ -9,6 +9,8 @@ Run Jenkins in Kubernetes: https://github.com/mateothegreat/k8-byexamples-jenkin
 * gcloud sdk
 * gradle
 
+_Docker Image is located at https://hub.docker.com/r/mateothegreat/docker-alpine-jenkins-gcloud/_
+
 ## Running Locally
 ```bash
 yomateod@proliant:/workspace/docker/docker-jenkins$ docker-compose up -d
