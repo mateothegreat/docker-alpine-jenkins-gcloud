@@ -1,7 +1,7 @@
 #
 # Derives from https://github.com/jenkinsci/docker/blob/master/Dockerfile-alpine
 #
-FROM jenkins/jenkins:2.125-alpine AS base
+FROM jenkins/jenkins:2.127-alpine AS base
 
 USER root
 
@@ -14,6 +14,11 @@ ENV GCLOUD_COMPONENTS="kubectl beta docker-credential-gcr"
 VOLUME [ "/var/jenkins_home" ]
 
 RUN apk add --update python docker
+
+RUN wget -O gradle.zip https://services.gradle.org/distributions/gradle-4.8-bin.zip && \
+    unzip gradle.zip && rm -f gradle.zip && \
+    ln -s /gradle-4.8/bin/gradle /usr/local/bin/gradle && \
+    gradle --version
 
 RUN wget https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz && \
     tar zxvf google-cloud-sdk.tar.gz && \
