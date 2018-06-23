@@ -13,7 +13,9 @@ ENV GCLOUD_COMPONENTS="kubectl beta docker-credential-gcr"
 
 VOLUME [ "/var/jenkins_home" ]
 
-RUN apk add --update python docker make gettext nodejs
+RUN apk add --update python docker make gettext nodejs py2-pip
+
+RUN pip install awscli
 
 RUN wget -O gradle.zip https://services.gradle.org/distributions/gradle-4.8-bin.zip && \
     unzip gradle.zip && rm -f gradle.zip && \
