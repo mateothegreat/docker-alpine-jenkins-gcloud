@@ -7,6 +7,8 @@ Run Jenkins in Kubernetes: https://github.com/mateothegreat/k8-byexamples-jenkin
 
 ## Included
 * gcloud sdk
+* aws cli
+* node.js
 * gradle
 
 _Docker Image is located at https://hub.docker.com/r/mateothegreat/docker-alpine-jenkins-gcloud/_
